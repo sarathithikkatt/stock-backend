@@ -1,20 +1,23 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Types } from "mongoose";
 
 @Schema({timestamps:true, versionKey:true})
 export class StockEntity{
-@Prop({
-    required:true,
+  @Prop({
+    required: true,
     trim: true
-})
-stockName: string
+  })
+  stockName!: string;
 
-@Prop({
-    required:true,
+
+  @Prop({
+    required: true,
     trim: true
-})
-userId: string
+  })
+  userId!: string;
 
-@Prop({
+
+  @Prop({
     type: [
       {
         date: { type: Date, required: true },
@@ -22,13 +25,13 @@ userId: string
       },
     ],
     validate: {
-      validator: function (v: Array<{ date: Date; price: number }>) {
+      validator: function (v: Array<{ date: Date; price: number; }>) {
         return v.length <= 20;
       },
       message: 'History array length exceeds the limit of 20',
     },
   })
-  history: { date: Date; price: number }[];
+  history!: { date: Date; price: number; }[];
 }
 
 export const StockCollectionName = 'stock'
