@@ -1,3 +1,6 @@
+<h1>Link to frontEnd</h1>
+<a href="https://github.com/sarathithikkatt/stock-app" target="_blank">Link to frontEnd</a>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
