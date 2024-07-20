@@ -49,7 +49,6 @@ export class StockService {
     options?: object
   ): Promise<StockDocument | null> {
     try {
-      console.log(filter, projection, options)
       return await this.stockModel.findOne(filter, projection, options).exec();
     } catch (error) {
       console.log("ERROR:", error)

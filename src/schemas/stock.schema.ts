@@ -19,28 +19,20 @@ export class StockEntity{
   @Prop({
     type: [
       {
-        timestamp: { type: String, required: true },
-        open: { type: Number, required: true },
-        high: { type: Number, required: true },
-        low: { type: Number, required: true },
-        close: { type: Number, required: true },
-        volume: { type: Number, required: true },
+        timestamp: { type: Date, required: true },
+        rate: { type: Number, required: true },
       },
     ],
     validate: {
-      validator: function (v: Array<{ timestamp: Date; open: number; high: number; low: number; close: number; volume: number }>) {
+      validator: function (v: Array<{ timestamp: Date; rate: number;}>) {
         return v.length <= 20;
       },
       message: 'History array length exceeds the limit of 20',
     },
   })
   history?: { 
-    timestamp: string; 
-    open: number; 
-    high: number; 
-    low: number; 
-    close: number; 
-    volume: number 
+    timestamp: Date; 
+    rate: number;
   }[];
 }
 
