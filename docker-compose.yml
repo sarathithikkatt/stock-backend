@@ -1,0 +1,10 @@
+backend:
+  build:
+    context: .
+    dockerfile: stock-backend/Dockerfile
+  depends_on:
+    - mongo
+  ports:
+    - '4000:4000'
+  env_file:
+    - .env
