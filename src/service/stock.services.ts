@@ -9,7 +9,7 @@ export class StockService {
     @InjectModel(StockEntity.name) private readonly stockModel: Model<StockDocument>
   ) {}
 
-  async create(stock: StockDocument): Promise<StockDocument> {
+  async create(stock: StockEntity): Promise<StockDocument> {
     try {
       return await this.stockModel.create(stock);
     } catch (error) {

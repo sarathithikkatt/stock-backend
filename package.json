@@ -26,6 +26,7 @@
     "@nestjs/mongoose": "^10.0.10",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/schedule": "^4.1.0",
+    "axios": "^1.7.2",
     "mongodb": "^4.17.2",
     "mongoose": "^8.5.1",
     "reflect-metadata": "^0.2.2",
