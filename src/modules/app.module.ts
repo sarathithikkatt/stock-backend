@@ -4,7 +4,6 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ScheduleModule } from '@nestjs/schedule';
 import { JobService } from '../job.service';
-import { StockModule } from './stock.module';
 import { AppController } from '../controller/app.controller';
 
 @Module({
@@ -16,7 +15,6 @@ import { AppController } from '../controller/app.controller';
       }
     ),
     ScheduleModule.forRoot(),
-    StockModule,
   ],
   controllers: [AppController],
   providers: [AppService, JobService],

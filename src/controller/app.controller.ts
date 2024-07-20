@@ -17,6 +17,6 @@ export class AppController {
 
   @Get('/stocks/:name')
   async getStockDetail(@Param() name:string){
-    return name
+    return this.appService.getStockDetail(name);
   }
 }

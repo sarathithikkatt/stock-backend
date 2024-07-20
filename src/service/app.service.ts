@@ -1,10 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { StockService } from './stock.services';
 
 @Injectable()
 export class AppService {
   constructor(
-    private readonly stockService = StockService
   ){}
 
   getHello(): string {
@@ -43,7 +41,6 @@ export class AppService {
   }
 
   async getStockDetail(name:string):Promise<any>{
-    const a = await this.stockService.getStockDetails(name)
-    return "hi"
+    return name
   }
 }

@@ -7,14 +7,14 @@ export class StockEntity{
     required: true,
     trim: true
   })
-  stockName!: string;
+  stockName: string;
 
 
   @Prop({
     required: true,
     trim: true
   })
-  userId!: string;
+  userId: string;
 
 
   @Prop({
@@ -31,7 +31,7 @@ export class StockEntity{
       message: 'History array length exceeds the limit of 20',
     },
   })
-  history!: { date: Date; price: number; }[];
+  history: { date: Date; price: number; }[];
 }
 
 export const StockCollectionName = 'stock'
