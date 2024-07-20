@@ -15,8 +15,8 @@ export class AppController {
     return this.appService.getUserStocks();
   }
 
-  @Get('/stocks/:name')
-  async getStockDetail(@Param() name:string){
-    return this.appService.getStockDetail(name);
+  @Get('/stock-info/:name')
+  async getStockDetail(@Param() param:any){
+    return this.appService.getStockDetail(param.name);
   }
 }

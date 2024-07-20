@@ -1,8 +1,10 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { StockService } from './stock.services';
 
 @Injectable()
 export class AppService {
   constructor(
+    private readonly stockService : StockService
   ){}
 
   getHello(): string {
@@ -41,6 +43,10 @@ export class AppService {
   }
 
   async getStockDetail(name:string):Promise<any>{
-    return name
+    const stock = await this.stockService.getStockDetails(name)
+    if (!stock) {
+      throw new NotFoundException(`Stock with name ${name} not found`);
+    }
+    return stock;
   }
 }

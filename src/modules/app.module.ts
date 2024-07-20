@@ -5,16 +5,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ScheduleModule } from '@nestjs/schedule';
 import { JobService } from '../job.service';
 import { AppController } from '../controller/app.controller';
+import { StockModule } from './stock.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(
-      process.env.MONGO_URI, {
-        connectionName: 'stock-api'
-      }
-    ),
+    MongooseModule.forRoot(process.env.MONGO_URI),
     ScheduleModule.forRoot(),
+    StockModule,
   ],
   controllers: [AppController],
   providers: [AppService, JobService],

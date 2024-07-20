@@ -1,7 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { Types } from "mongoose";
 
-@Schema({timestamps:true, versionKey:true})
+@Schema({timestamps:true})
 export class StockEntity{
   @Prop({
     required: true,
@@ -31,9 +30,9 @@ export class StockEntity{
       message: 'History array length exceeds the limit of 20',
     },
   })
-  history: { date: Date; price: number; }[];
+  history?: { date: Date; price: number; }[];
 }
 
-export const StockCollectionName = 'stock'
+export const StockCollectionName = 'stocks'
 export const StockSchema = SchemaFactory.createForClass(StockEntity)
 export type StockDocument = StockEntity & Document
