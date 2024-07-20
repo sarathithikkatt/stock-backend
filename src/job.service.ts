@@ -11,7 +11,7 @@ export class JobService {
         private readonly stockService: StockService
     ) {}
 
-    @Cron(CronExpression.EVERY_5_SECONDS)
+    @Cron(CronExpression.EVERY_5_MINUTES)
     async fettchCoinDetail() {
         for (const stockName of STOCK_NAMES) {
             const url = 'https://api.livecoinwatch.com/coins/single';
